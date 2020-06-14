@@ -42,6 +42,14 @@ int main()
 	cout << "\nThe one's complement of\n";
 	displayBit(~number);
 
+	number = 1000;
+	cout << "\nThe 8-bit LEFT shift operator of\n";
+	displayBit(number);
+	displayBit(number<<8);
+	cout << "The 8-bit RIGHT shift operator of\n";
+	displayBit(number >> 8);
+
+
 }
 void displayBit(unsigned number)
 {
@@ -50,7 +58,7 @@ void displayBit(unsigned number)
 
 	cout << setw(10) << number << " = ";
 
-	for (unsigned i = 1; i <= SHIFT; ++i)
+	for (unsigned i = 1; i <= SHIFT+1; ++i)
 	{
 		cout << (number & MASK ? '1' : '0');
 		number <<= 1;
